@@ -311,3 +311,51 @@ app.post("/uploadImage", jsonParser, function (req, res) {
     res.send("File uploaded!");
   });
 });
+
+app.put("/ReportDisease", jsonParser, function (req, res) {
+  console.log(req.body);
+  let ts = new Date().toLocaleDateString()
+  poolCluster.getConnection(function (err, connection) {
+    if (err) {
+      console.log(err);
+    } else {
+      // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+      sampleFile = req.files;
+      console.log(sampleFile);
+      console.log(sampleFile.file.name);
+      uploadPath = __dirname + "/image/" + sampleFile.file.name;
+      console.log(uploadPath);
+      // Use the mv() method to place the file somewhere on your server
+      sampleFile.file.mv(uploadPath, function (err) {
+        if (err) return res.status(500).send(err);
+      });
+      connection.query(
+        "INSERT INTO DiseaseReport (UserID, UserFname, UserLname, Latitude, Longitude, PhoneNumber, Detail, DiseaseID, DiseaseName, DiseaseImage, ResaultPredict, DiseaseNameEng , DateReport, AddressUser) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);",
+        [
+          req.body.UserID,
+          req.body.UserFname,
+          req.body.UserLname,
+          req.body.Latitude,
+          req.body.Longitude,
+          req.body.PhoneNumber,
+          req.body.Detail,
+          req.body.DiseaseID,
+          req.body.DiseaseName,
+          sampleFile.file.name,
+          req.body.ResaultPredict,
+          req.body.DiseaseNameEng,
+          ts,
+          req.body.AddressUser,
+        ],
+        function (err) {
+          if (err) {
+            res.json({ err });
+          } else {
+            res.json({ status: "success" });
+            connection.release();
+          }
+        }
+      );
+    }
+  });
+});
