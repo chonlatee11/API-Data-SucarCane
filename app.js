@@ -14,8 +14,8 @@ app.use(fileUpload());
 var mysql = require("mysql");
 var poolCluster = mysql.createPoolCluster();
 poolCluster.add("node0", {
-  host: "127.0.0.1",
-  port: "3307",
+  host: "192.168.1.22",
+  port: "3306",
   database: "mymariaDB",
   user: "devchon",
   password: "devchon101",
@@ -43,7 +43,7 @@ app.get("/getDisease", jsonParser, function (req, res, next) {
             console.log(data.length);
             for (let i = 0; i < data.length; i++) {
               data[i].ImageUrl =
-                "http://127.0.0.1:3032/image/" + data[i].ImageName;
+                "http://192.168.1.22:3032/image/" + data[i].ImageName;
             }
             res.json({ data });
             // connection.end();
@@ -219,7 +219,7 @@ app.get("/diseaseallreport", jsonParser, function (req, res) {
             console.log(data.length);
             for (let i = 0; i < data.length; i++) {
               data[i].ImageUrl =
-                "http://127.0.0.1:3032/image/" + data[i].DiseaseImage;
+                "http://192.168.1.22:3032/image/" + data[i].DiseaseImage;
             }
             res.json({ data });
             // connection.end();
@@ -250,7 +250,7 @@ app.post("/diseaseresualt", jsonParser, function (req, res, next) {
               DiseaseName: data[0].DiseaseName, //update this
               InfoDisease: data[0].InfoDisease,
               ProtectInfo: data[0].ProtectInfo,
-              ImageUrl: "http://127.0.0.1:3032/image/" + data[0].ImageName,
+              ImageUrl: "http://192.168.1.22:3032/image/" + data[0].ImageName,
               DiseaseNameEng: data[0].DiseaseNameEng,
             };
             res.json({ DiseaseData });
@@ -280,7 +280,7 @@ app.post("/diseasereport", jsonParser, function (req, res) {
             console.log(data.length);
             for (let i = 0; i < data.length; i++) {
               data[i].ImageUrl =
-                "http://127.0.0.1:3032/image/" + data[i].DiseaseImage;
+                "http://192.168.1.22:3032/image/" + data[i].DiseaseImage;
             }
             res.json({ data });
             // connection.end();
