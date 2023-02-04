@@ -14,7 +14,7 @@ app.use(fileUpload());
 var mysql = require("mysql");
 var poolCluster = mysql.createPoolCluster();
 poolCluster.add("node0", {
-  host: "192.168.1.22",
+  host: "127.0.0.1",
   port: "3306",
   database: "mymariaDB",
   user: "devchon",
