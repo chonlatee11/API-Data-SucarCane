@@ -1,0 +1,275 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "API Mobile",
+    "dateExported": "2023-02-20T08:22:40.718Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "25f3f071-f57d-4a64-a634-984e806ed093",
+            "colId": "433679fc-035d-4db7-8593-e59cf0515648",
+            "containerId": "",
+            "name": "127.0.0.1:3030/register",
+            "url": "192.168.1.22:3001/register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-02-03T12:12:40.702Z",
+            "modified": "2023-02-20T03:13:45.101Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"userName\": \"abcd\",\n    \"passWord\": \"4567\",\n    \"fName\": \"Chonlatee\",\n    \"lName\": \"Khamlue\",\n    \"phoneNumber\": \"1234567890\",\n    \"address\": \"blablabla\",\n    \"latitude\": \"13.0111\",\n    \"longitude\": \"100.23223\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "7b83ddb7-5231-4316-bbfc-e93118764c6c",
+            "colId": "433679fc-035d-4db7-8593-e59cf0515648",
+            "containerId": "",
+            "name": "127.0.0.1:3030/inserttable",
+            "url": "127.0.0.1:3030/inserttable",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-02-03T12:12:40.703Z",
+            "modified": "2023-02-03T12:12:40.703Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"userName\": \"chonlatee11\",\r\n    \"passWord\": \"1234\",\r\n    \"fName\": \"Chonlatee\",\r\n    \"lName\": \"Khamlue\",\r\n    \"phoneNumber\": \"1234567890\",\r\n    \"address\": \"blablabla\"\r\n}"
+            }
+        },
+        {
+            "_id": "f03f4060-7630-40b3-864e-58c3ba700bad",
+            "colId": "433679fc-035d-4db7-8593-e59cf0515648",
+            "containerId": "",
+            "name": "127.0.0.1:3030/getUser",
+            "url": "192.168.1.2:3030/getUser",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-02-03T12:12:40.704Z",
+            "modified": "2023-02-03T12:12:40.704Z",
+            "headers": []
+        },
+        {
+            "_id": "d2007a29-e2d6-4cc4-9a5b-0ce1b890b9ac",
+            "colId": "433679fc-035d-4db7-8593-e59cf0515648",
+            "containerId": "",
+            "name": "127.0.0.1:3030/login",
+            "url": "192.168.1.22:3001/login",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-02-03T12:12:40.705Z",
+            "modified": "2023-02-20T02:54:01.171Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"userName\": \"abcd\",\n    \"passWord\": \"4567\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "74e934c1-3422-49d2-9b62-f61feb1c759b",
+            "colId": "433679fc-035d-4db7-8593-e59cf0515648",
+            "containerId": "",
+            "name": "127.0.0.1:3030/getToken",
+            "url": "https://www.melivecode.com/api/login",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-02-03T12:12:40.706Z",
+            "modified": "2023-02-03T12:12:40.706Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n  \"username\": \"karn.yong@melivecode.com\",\r\n  \"password\": \"melivecode\"\r\n}"
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cC..."
+            }
+        },
+        {
+            "_id": "2418cb39-30e8-457e-a0cb-80c61e827414",
+            "colId": "433679fc-035d-4db7-8593-e59cf0515648",
+            "containerId": "",
+            "name": "Test model API",
+            "url": "http://192.168.1.22:8000/upload",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2023-02-03T12:12:40.707Z",
+            "modified": "2023-02-03T12:12:40.707Z",
+            "headers": [],
+            "body": {
+                "form": [],
+                "files": [
+                    {
+                        "name": "file",
+                        "value": "/E:/Dataset/ใบเหลือง/IMG (10).jpg"
+                    }
+                ],
+                "type": "formdata"
+            }
+        },
+        {
+            "_id": "c301f631-f552-436b-a2a4-606173fee532",
+            "colId": "433679fc-035d-4db7-8593-e59cf0515648",
+            "containerId": "",
+            "name": "127.0.0.1:3030/diseaseresualt",
+            "url": "127.0.0.1:3032/diseaseresualt",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2023-02-03T12:12:40.708Z",
+            "modified": "2023-02-03T12:12:40.708Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"name\": \"RedLine\"\r\n}"
+            }
+        },
+        {
+            "_id": "bc61fc1c-738f-49fe-9939-500ced32a42e",
+            "colId": "433679fc-035d-4db7-8593-e59cf0515648",
+            "containerId": "",
+            "name": "127.0.0.1::/image/:filename",
+            "url": "127.0.0.1::/image/{filename}",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2023-02-03T12:12:40.709Z",
+            "modified": "2023-02-03T12:12:40.709Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "filename",
+                    "value": null,
+                    "isDisabled": false,
+                    "isPath": true
+                }
+            ]
+        },
+        {
+            "_id": "0f0e2165-d70b-460f-9754-c8fce202c293",
+            "colId": "433679fc-035d-4db7-8593-e59cf0515648",
+            "containerId": "",
+            "name": "127.0.0.1:3030/uploadImage",
+            "url": "127.0.0.1:3030/uploadImage",
+            "method": "POST",
+            "sortNum": 90000,
+            "created": "2023-02-03T12:12:40.710Z",
+            "modified": "2023-02-03T12:12:40.710Z",
+            "headers": [],
+            "body": {
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "leafburn"
+                    },
+                    {
+                        "name": "latitude",
+                        "value": "awdawdwad"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "file",
+                        "value": "/E:/Dataset/ใบไหม้/IMG_20220923_120053_001 - Copy - Copy (2).jpg"
+                    }
+                ],
+                "type": "formdata"
+            }
+        },
+        {
+            "_id": "b8e64b81-461c-4c52-b1e1-52a9d88216f5",
+            "colId": "433679fc-035d-4db7-8593-e59cf0515648",
+            "containerId": "",
+            "name": "127.0.0.1:3030/disease",
+            "url": "http://192.168.1.22:3030/disease",
+            "method": "GET",
+            "sortNum": 100000,
+            "created": "2023-02-03T12:12:40.711Z",
+            "modified": "2023-02-03T12:12:40.711Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": ""
+            }
+        },
+        {
+            "_id": "460e2038-5501-455e-9ede-dd468d65a39b",
+            "colId": "433679fc-035d-4db7-8593-e59cf0515648",
+            "containerId": "",
+            "name": "http://192.168.1.22:3030/disease",
+            "url": "http://192.168.1.22:3030/disease",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2023-02-03T12:12:40.712Z",
+            "modified": "2023-02-03T12:12:40.712Z",
+            "headers": []
+        },
+        {
+            "_id": "48d85f58-b9b4-492b-b946-96fefe0aed58",
+            "colId": "433679fc-035d-4db7-8593-e59cf0515648",
+            "containerId": "",
+            "name": "http://192.168.1.22:3030/diseasereport",
+            "url": "http://192.168.1.22:3030/diseasereport",
+            "method": "POST",
+            "sortNum": 120000,
+            "created": "2023-02-03T12:12:40.713Z",
+            "modified": "2023-02-03T12:12:40.713Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"userID\": \"14\"\r\n}"
+            }
+        },
+        {
+            "_id": "1a98e26e-b841-4559-9e3f-a75bfc314b7a",
+            "colId": "433679fc-035d-4db7-8593-e59cf0515648",
+            "containerId": "",
+            "name": "http://192.168.1.22:3030/DatabaseImage",
+            "url": "http://192.168.1.22:3030/DatabaseImage",
+            "method": "POST",
+            "sortNum": 130000,
+            "created": "2023-02-03T12:12:40.714Z",
+            "modified": "2023-02-03T12:12:40.714Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \r\n}"
+            }
+        },
+        {
+            "_id": "2dfcc9cc-48e3-450d-86fb-db1438936bb7",
+            "colId": "433679fc-035d-4db7-8593-e59cf0515648",
+            "containerId": "",
+            "name": "192.168.1.22:3030/diseaseallreport",
+            "url": "192.168.1.22:3030/diseaseallreport",
+            "method": "GET",
+            "sortNum": 140000,
+            "created": "2023-02-03T12:12:40.715Z",
+            "modified": "2023-02-03T12:12:40.715Z",
+            "headers": []
+        },
+        {
+            "_id": "eeab59a2-2bf8-41b0-a74c-a923572c8389",
+            "colId": "433679fc-035d-4db7-8593-e59cf0515648",
+            "containerId": "",
+            "name": "192.168.1.22/login",
+            "url": "192.168.1.22:3001/login",
+            "method": "POST",
+            "sortNum": 150000,
+            "created": "2023-02-20T02:55:42.939Z",
+            "modified": "2023-02-20T03:32:35.406Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"userName\": \"abcd\",\n  \"passWord\": \"4567\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}

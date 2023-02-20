@@ -3,16 +3,26 @@ var cors = require("cors");
 var app = express();
 var bodyParser = require("body-parser");
 var jsonParser = bodyParser.json();
+var dotenv = require("dotenv");
+var mysql = require("mysql");
 const fileUpload = require("express-fileupload");
 const path = require("path");
 const mime = require("mime");
 const fs = require("fs");
+
+const PORT = process.env.SERVER_PORT || 3002;
+
+app.listen(PORT, function () {
+  console.log("CORS-enabled web server listening on port 3002");
+});
+
+dotenv.config();
 // Use cors to allow cross origin resource sharing
-app.use(cors());
+app.use(cors({ origin: "*" }));
 // Use the express-fileupload middleware
 app.use(fileUpload());
-var mysql = require("mysql");
-var poolCluster = mysql.createPoolCluster();
+
+const poolCluster = mysql.createPoolCluster();
 poolCluster.add("node0", {
   host: "127.0.0.1",
   port: "3306",
@@ -22,10 +32,7 @@ poolCluster.add("node0", {
   charset: "utf8mb4",
 });
 
-app.listen(3032, function () {
-  console.log("CORS-enabled web server listening on port 3032");
-});
-
+app.get("/",(res) => { res.json( {message: 'UP'}) })
 
 //get disease from mobile and web
 app.get("/getDisease", jsonParser, function (req, res, next) {
@@ -43,7 +50,7 @@ app.get("/getDisease", jsonParser, function (req, res, next) {
             console.log(data.length);
             for (let i = 0; i < data.length; i++) {
               data[i].ImageUrl =
-                "http://192.168.1.22:3032/image/" + data[i].ImageName;
+                "http://192.168.1.22:3002/image/" + data[i].ImageName;
             }
             res.json({ data });
             // connection.end();
@@ -219,7 +226,7 @@ app.get("/diseaseallreport", jsonParser, function (req, res) {
             console.log(data.length);
             for (let i = 0; i < data.length; i++) {
               data[i].ImageUrl =
-                "http://192.168.1.22:3032/image/" + data[i].DiseaseImage;
+                "http://192.168.1.22:3002/image/" + data[i].DiseaseImage;
             }
             res.json({ data });
             // connection.end();
@@ -250,7 +257,7 @@ app.post("/diseaseresualt", jsonParser, function (req, res, next) {
               DiseaseName: data[0].DiseaseName, //update this
               InfoDisease: data[0].InfoDisease,
               ProtectInfo: data[0].ProtectInfo,
-              ImageUrl: "http://192.168.1.22:3032/image/" + data[0].ImageName,
+              ImageUrl: "http://192.168.1.22:3002/image/" + data[0].ImageName,
               DiseaseNameEng: data[0].DiseaseNameEng,
             };
             res.json({ DiseaseData });
@@ -280,7 +287,7 @@ app.post("/diseasereport", jsonParser, function (req, res) {
             console.log(data.length);
             for (let i = 0; i < data.length; i++) {
               data[i].ImageUrl =
-                "http://192.168.1.22:3032/image/" + data[i].DiseaseImage;
+                "http://192.168.1.22:3002/image/" + data[i].DiseaseImage;
             }
             res.json({ data });
             // connection.end();
