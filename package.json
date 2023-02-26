@@ -1,18 +1,37 @@
 {
+  "name": "api-data-sucarcane",
+  "version": "1.0.0",
+  "description": "NodeJs Web API For Serve ImageData",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start:prod": "node app.js",
-    "start:dev": "nodemon app.js"
+    "start:prod": "node src/index.js",
+    "start:dev": "nodemon src/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chonlatee11/API-Data-SucarCane.git"
+  },
+  "keywords": [
+    "NodeJs",
+    "Express",
+    "API"
+  ],
+  "author": "DevChonlatee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chonlatee11/API-Data-SucarCane/issues"
+  },
+  "homepage": "https://github.com/chonlatee11/API-Data-SucarCane#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-fileupload": "^1.4.0",
     "ip": "^1.1.8",
-    "multer": "^1.4.5-lts.1",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.20",
-    "pino": "^8.10.0",
-    "pino-pretty": "^9.3.0"
+    "pino": "^8.11.0",
+    "pino-pretty": "^9.4.0"
   }
 }
